@@ -1,14 +1,15 @@
 {
-  "name": "wasm-flate",
+  "name": "@datawallet/wasm-flate",
   "version": "1.0.0",
   "description": "A template for kick starting a Rust and WebAssembly project using [`wasm-pack`](https://github.com/rustwasm/wasm-pack).",
-  "main": "index.js",
+  "main": "pkg/wasm_flate.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "build": "wasm-pack build --target bundler --release --scope=datawallet && sed -i.bak \"s/wasm_flate_bg/wasm_flate_bg.wasm/\" pkg/wasm_flate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Nicolas Brugneaux <nicolas.brugneaux@gmail.com>",
+  "license": "MIT"
 }
